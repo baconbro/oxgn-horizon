@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15 # Or your preferred PostgreSQL version
+    container_name: horizon_db
+    restart: always
+    environment:
+      POSTGRES_USER: horizon_user
+      POSTGRES_PASSWORD: 8vR2!pQz7#LmXw4sTg
+      POSTGRES_DB: horizon_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - horizon_db_data:/var/lib/postgresql/data
+
+volumes:
+  horizon_db_data:
