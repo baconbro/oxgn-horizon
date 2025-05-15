@@ -4,8 +4,8 @@ export const typeDefs = `#graphql
   type Query {
     hello: String
     users: [User!]
-    workspace(id: ID!): Workspace # Updated from project
-    # myWorkspaces: [Workspace!] # Example for fetching user's workspaces
+    workspace(id: ID!): Workspace
+    # myWorkspaces: [Workspace!]
   }
 
   type User {
@@ -14,16 +14,15 @@ export const typeDefs = `#graphql
     email: String
     image: String
     createdAt: DateTime
-    workspaces: [Workspace!] # Updated from projects
+    workspaces: [Workspace!]
   }
 
-  // Renamed from Project to Workspace
   type Workspace {
     id: ID!
     name: String!
     description: String
     createdAt: DateTime
-    user: User # The user who created this workspace
+    user: User
     # items: [WorkspaceItem!] will be added later
   }
 
